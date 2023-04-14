@@ -28,7 +28,6 @@ const handleRegisterForm = (array) => {
         array.push(newValue)
         render(array)
         newValue = {}
-        console.log(array)
     })
 }  
 

@@ -6,8 +6,13 @@ const render = (array) => {
         const card = createCard(insertedValue)
         main__itens.append(card)
     })
+    totalAmount(array)
+    depositAndOutflow(insertedValues)
+    onlyDeposit(insertedValues)
+    onlyOutflow(insertedValues)
 }
 
+// Creating the cards of values
 const createCard = (insertedValue) => {
     // We are going to create the HTML elements 
     const mainItens__card = document.createElement('li')
@@ -41,7 +46,7 @@ const createCard = (insertedValue) => {
     return mainItens__card
   }
 
-
+// Tranforming '0' into 'Entrada' and '1' into 'Saída' 
 const transformingData = (array) => {
     array.forEach(element => {
         if((element.categoryID === 0) || element.categoryID === 'Entrada'){
@@ -50,7 +55,57 @@ const transformingData = (array) => {
             element.categoryID = valuesCategory[1]
         }
     })
-    console.log(array)
 }
 
+// Function that gives the total amount of individual
+const totalAmount = (array) => {
+    const arrayTotalDeposits = array.filter( element => element.categoryID === 'Entrada')
+    let totalDeposits = []
+    arrayTotalDeposits.forEach(deposit => {
+        totalDeposits.push(deposit.value)
+    })
+    const totalDepositsValue = totalDeposits.reduce((acc, deposit) => acc + deposit, 0)
+    
+    const arrayTotalOutflow = array.filter( element => element.categoryID === 'Saída')
+    let totalOutflow = []
+    arrayTotalOutflow.forEach(outflow => {
+        totalOutflow.push(outflow.value)
+    })
+    const totalOutflowValue = totalOutflow.reduce((acc, outflow) => acc + outflow, 0)
+    
+    const totalAmount = totalDepositsValue-totalOutflowValue
+
+    mainValuesSummary__sumValue.innerHTML = `R$${totalAmount}`
+}
+
+// Function that filters the values 'entrada' and the values 'saída'
+const depositAndOutflow = (array) => {
+    // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
+    // 2b - We have to use the render function with the new array created in 1 at the button
+    mainButtons__buttonAll.addEventListener('click', () => {
+        render(array)
+    })
+}
+
+const onlyDeposit = (array) => {
+    // 1 - We have to create a new array from 'array' that filters only the deposit's values
+    const arrayTotalDeposits = array.filter( element => element.categoryID === 'Entrada')
+
+    // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
+    // 2b - We have to use the render function with the new array created in 1 at the button
+    mainButtons__buttonDeposit.addEventListener('click', () => {
+        render(arrayTotalDeposits)
+    })
+}
+
+const onlyOutflow = (array) => {
+    // 1 - We have to create a new array from 'array' that filters only the deposit's values
+    const arrayTotalDeposits = array.filter( element => element.categoryID === 'Saída')
+
+    // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
+    // 2b - We have to use the render function with the new array created in 1 at the button
+    mainButtons__buttonOutflow.addEventListener('click', () => {
+        render(arrayTotalDeposits)
+    })
+}
 render(insertedValues)
