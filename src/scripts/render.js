@@ -41,10 +41,10 @@ const createCard = (insertedValue) => {
     // Assigning classes and IDs to the elements
     mainItens__card.classList = 'mainItens__card'
     card__valueFormated.classList = 'card__valueFormated'
-    valueFormated__moneySimbol.classList = 'valueFormated__moneySimbol'
-    valueFormated__value.classList = 'valueFormated__value'
+    valueFormated__moneySimbol.classList = 'valueFormated__moneySimbol text-2-medium'
+    valueFormated__value.classList = 'valueFormated__value text-2-medium'
     card__Category.classList = 'card__Category'
-    cardCategory__valueType.classList = 'cardCategory__valueType'
+    cardCategory__valueType.classList = 'cardCategory__valueType text-2-regular'
     cardCategory__trashButton.classList = 'cardCategory__trashButton' 
     cardCategory__trashButton.dataset.id = insertedValue.id 
 
@@ -84,7 +84,7 @@ const totalAmount = (array) => {
     
     const totalAmount = totalDepositsValue-totalOutflowValue
     
-    mainValuesSummary__sumValue.innerHTML = `R$${totalAmount}`
+    mainValuesSummary__sumValue.innerHTML = `R$ ${totalAmount}`
 }
 
 

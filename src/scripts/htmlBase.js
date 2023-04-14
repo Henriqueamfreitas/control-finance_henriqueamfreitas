@@ -2,9 +2,10 @@
 const body = document.querySelector('body')
 
 const header = document.createElement('header')
+const header__div = document.createElement('div')
 const header__title = document.createElement('div')
-const headerTitle__h1 = document.createElement('h1')
 const headerTitle__h1_blue = document.createElement('h1')
+const headerTitle__h1 = document.createElement('h1')
 const header__button = document.createElement('button')
 
 
@@ -50,7 +51,8 @@ const main__itens = document.createElement('div')
 
 //  Establishing the hierarchy between elements
 body.append(header, main)
-header.append(header__title, header__button, modal)
+header.append(header__div, modal)
+header__div.append(header__title, header__button)
 modal.append(modal__container)
 modal__container.append(modalContainer__form)
 modalContainer__form.append(modalForm__TopPart, modalForm__p, modalForm__middlePart, modalForm__bottomPart)
@@ -59,15 +61,15 @@ modalForm__middlePart.append(formMiddlePart__h3, formMiddlePart__input)
 modalForm__bottomPart.append(form__bottomPart__h4, inputDeposit__label, form__bottomPart__inputDeposit, 
     inputOutflow__label, form__bottomPart__inputOutflow, modalForm__buttons)
 modalForm__buttons.append(formButtons__cancel, formButtons__submit)
-header__title.append(headerTitle__h1, headerTitle__h1_blue)
+header__title.append(headerTitle__h1_blue, headerTitle__h1)
 main.append(main__h2, main__buttons, main__valuesSummary, main__itens)
 main__buttons.append(mainButtons__buttonAll, mainButtons__buttonDeposit, mainButtons__buttonOutflow)
 main__valuesSummary.append(mainValuesSummary__sum, mainValuesSummary__sumValue)
 
 
 // Assigning values to the elements
-headerTitle__h1.innerHTML = 'Control' 
-headerTitle__h1_blue.innerHTML = 'Finance'
+headerTitle__h1_blue.innerHTML = 'Control'
+headerTitle__h1.innerHTML = 'Finance' 
 header__button.innerHTML = 'Regitrar novo valor'
 
 formTopPart__h2.innerHTML = 'Registro de valor'
@@ -114,11 +116,11 @@ mainValuesSummary__sumValue.innerHTML = 0
 
 
 // Assigning classes to the elements
+header__div.classList = 'header__div' 
 header__title.classList = 'header__title'
-header.classList = 'header' 
-headerTitle__h1.classList = 'headerTitle__h1' 
-headerTitle__h1_blue.classList = 'headerTitle__h1-blue' 
-header__button.classList = 'header__button' 
+headerTitle__h1.classList = 'headerTitle__h1 title-1-bold' 
+headerTitle__h1_blue.classList = 'headerTitle__h1-blue title-1-bold' 
+header__button.classList = 'header__button text-1-bold' 
 
 modal.classList = 'modal__controller'
 modal__container.classList = 'modal__container'
@@ -146,15 +148,15 @@ modalForm__buttons.classList = 'modalForm__buttons'
 formButtons__cancel.classList = 'formButtons__cancel'
 formButtons__submit.classList = 'formButtons__submit'
 
-main__h2.classList = 'main__h2' 
+main__h2.classList = 'main__h2 title-2-medium' 
 main__buttons.classList = 'main__buttons' 
-mainButtons__buttonAll.classList = 'mainButtons__buttonAll' 
-mainButtons__buttonDeposit.classList = 'mainButtons__buttonDeposit' 
-mainButtons__buttonOutflow.classList = 'mainButtons__buttonOutflow' 
+mainButtons__buttonAll.classList = 'mainButtons__buttonAll text-1-bold' 
+mainButtons__buttonDeposit.classList = 'mainButtons__buttonDeposit text-1-bold' 
+mainButtons__buttonOutflow.classList = 'mainButtons__buttonOutflow text-1-bold' 
 
 main__valuesSummary.classList = 'main__valuesSummary' 
-mainValuesSummary__sum.classList = 'mainValuesSummary__sum' 
-mainValuesSummary__sumValue.classList = 'mainValuesSummary__sumValue' 
+mainValuesSummary__sum.classList = 'mainValuesSummary__sum text-2-medium' 
+mainValuesSummary__sumValue.classList = 'mainValuesSummary__sumValue text-2-medium' 
 
 main__itens.classList = 'main__itens' 
 

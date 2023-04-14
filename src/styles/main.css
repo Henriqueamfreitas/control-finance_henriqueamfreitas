@@ -1,22 +1,102 @@
-/* main */
-main{}
-.main__h2{} 
-.main__buttons{} 
-.mainButtons__buttonAll{} 
-.mainButtons__buttonDeposit{} 
-.mainButtons__buttonOutflow{} 
+main{
+    margin-top: 1.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 
-.main__valuesSummary{} 
-.mainValuesSummary__sum{} 
-.mainValuesSummary__sumValue{} 
+.main__h2{
+    color: var(--color-grey-1);
+    margin-bottom: 2.375rem;
+} 
 
-.main__itens{}
-.mainItens__card{}
 
-.card__valueFormated{}
-.valueFormated__moneySimbol{}
-.valueFormated__value{}
+/* main__buttons  */
+.main__buttons{
+    display: flex;
+    gap: .625rem;
+    margin-bottom: 1.75rem;
+} 
 
-.card__Category{}
-.cardCategory__valueType{}
+.mainButtons__buttonAll, .mainButtons__buttonDeposit, .mainButtons__buttonOutflow{
+    border: var(--color-grey-5) .0938rem solid;
+    padding-top: .4688rem;
+    padding-bottom: .4688rem;
+    padding-left: .875rem;
+    padding-right: .875rem;
+    border-radius: var(--radius-1);
+    background-color: transparent;
+    color: var(--color-grey-2);
+    cursor: pointer;
+} 
+
+
+/* main__valuesSummary */
+.main__valuesSummary{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .8438rem;
+    padding-bottom: .8438rem;
+    background-color: var(--color-grey-4);
+    border-radius: var(--radius-1);
+    margin-bottom: 1.75rem;
+}
+
+.mainValuesSummary__sum{
+    color: var(--color-grey-1);
+} 
+
+.mainValuesSummary__sumValue{
+    color: var(--color-grey-1);
+} 
+
+
+/* main__itens */
+.main__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.mainItens__card{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    height: 2.625rem;
+    border: solid .0938rem var(--color-grey-5);
+    border-radius: var(--radius-1);
+}
+
+.card__valueFormated{
+    display: flex;
+    gap: 0.125rem;
+}
+
+.valueFormated__moneySimbol{
+
+}
+
+.valueFormated__value{
+
+}
+
+.card__Category{
+    display: flex;
+    gap: 1.9844rem;
+}
+
+.cardCategory__valueType{
+    display: flex;
+    width: 4.25rem;
+    background-color: var(--color-grey-4);
+    border-radius: var(--radius-2);
+    justify-content: center;
+    align-items: center;
+    height: 1.625rem;
+}
+
 .cardCategory__trashButton{} 

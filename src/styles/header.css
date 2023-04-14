@@ -1,10 +1,41 @@
-/* Header */
-header{}
+header{
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
+    background-color: var(--color-grey-5);
+    /* display: flex; */
+}
 
-.header__title{}
+.header__div{
+    margin-right: 1rem;
+    margin-left: 1rem;    
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+}
+.header__title{
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+}
 
-.headerTitle__h1{}
+.headerTitle__h1{
+    color: var(--color-grey-1);
+}
 
-.headerTitle__h1-blue{} 
+.headerTitle__h1-blue{
+    color: var(--color-brand-1);
+} 
 
-.header__button{}
+.header__button{
+    display: flex;
+    width: 100%;    
+    margin-top: 0rem;
+    padding-top: .4688rem;    
+    padding-bottom: .4688rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-1);    
+    cursor: pointer;
+    background-color: var(--color-brand-1);
+    border: none;
+    color: var(--fixed-white);
+}
