@@ -76,25 +76,27 @@ formTopPart__closeButton.innerHTML = 'X'
 modalForm__p.innerHTML = 'Digite o valor e em seguida aperte no botão referente ao tipo do valor'
 
 formMiddlePart__h3.innerHTML = 'Valor'
+formMiddlePart__input.type = 'number'
 formMiddlePart__input.innerHTML = `R$${0},00`
+formMiddlePart__input.name = 'value' 
 
 
 form__bottomPart__h4.innerHTML = 'Tipo de valor'
 form__bottomPart__inputDeposit.type = 'radio'
-form__bottomPart__inputDeposit.hidden = true
+// form__bottomPart__inputDeposit.hidden = true
 form__bottomPart__inputDeposit.id = 0 
 form__bottomPart__inputDeposit.value = 0  
-form__bottomPart__inputDeposit.name = 'valueType'  
+form__bottomPart__inputDeposit.name = 'categoryID'  
 inputDeposit__label.tabIndex = 0
 inputDeposit__label.for = 0
 inputDeposit__label.innerHTML = 'Entrada'
 form__bottomPart__inputOutflow.type = 'radio'
-form__bottomPart__inputOutflow.hidden = true
-form__bottomPart__inputOutflow.id = 0 
-form__bottomPart__inputOutflow.value = 0  
-form__bottomPart__inputOutflow.name = 'valueType'  
-inputOutflow__label.tabIndex = 0
-inputOutflow__label.for = 0
+// form__bottomPart__inputOutflow.hidden = true
+form__bottomPart__inputOutflow.id = 1
+form__bottomPart__inputOutflow.value = 1
+form__bottomPart__inputOutflow.name = 'categoryID'  
+inputOutflow__label.tabIndex = 1
+inputOutflow__label.for = 1
 inputOutflow__label.innerHTML = 'Saída'
 
 
