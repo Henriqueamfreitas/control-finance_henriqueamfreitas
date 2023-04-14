@@ -114,6 +114,7 @@ mainValuesSummary__sumValue.innerHTML = 0
 
 
 // Assigning classes to the elements
+header__title.classList = 'header__title'
 header.classList = 'header' 
 headerTitle__h1.classList = 'headerTitle__h1' 
 headerTitle__h1_blue.classList = 'headerTitle__h1-blue' 

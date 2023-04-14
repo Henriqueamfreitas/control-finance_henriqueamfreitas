@@ -1,0 +1,22 @@
+/* main */
+main{}
+.main__h2{} 
+.main__buttons{} 
+.mainButtons__buttonAll{} 
+.mainButtons__buttonDeposit{} 
+.mainButtons__buttonOutflow{} 
+
+.main__valuesSummary{} 
+.mainValuesSummary__sum{} 
+.mainValuesSummary__sumValue{} 
+
+.main__itens{}
+.mainItens__card{}
+
+.card__valueFormated{}
+.valueFormated__moneySimbol{}
+.valueFormated__value{}
+
+.card__Category{}
+.cardCategory__valueType{}
+.cardCategory__trashButton{} 

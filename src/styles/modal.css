@@ -1,0 +1,25 @@
+/* Modal */
+.modal__controller{}
+.modal__container{}
+.modalContainer__form{}
+
+.modalForm__TopPart{}
+.formTopPart__h2{}
+.formTopPart__closeButton{}
+
+.modalForm__p{}
+
+.modalForm__middlePart{} 
+.formMiddlePart__h3{}
+.formMiddlePart__input{}
+
+.modalForm__bottomPart{} 
+.form__bottomPart__h4{}
+.inputDeposit__label{}
+.form__bottomPart__inputDeposit{}
+.inputOutflow__label{}
+.form__bottomPart__inputOutflow{}
+
+.modalForm__buttons{} 
+.formButtons__cancel{}
+.formButtons__submit{}
