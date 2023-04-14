@@ -10,7 +10,9 @@ const render = (array) => {
     depositAndOutflow(insertedValues)
     onlyDeposit(insertedValues)
     onlyOutflow(insertedValues)
+    handleDeleteValue(insertedValues)
 }
+
 
 // Creating the cards of values
 const createCard = (insertedValue) => {
@@ -23,10 +25,12 @@ const createCard = (insertedValue) => {
     const cardCategory__valueType = document.createElement('p')
     const cardCategory__trashButton = document.createElement('button') 
   
+    
     //  Establishing the hierarchy between elements
     mainItens__card.append(card__valueFormated, card__Category)
     card__valueFormated.append(valueFormated__moneySimbol, valueFormated__value)
     card__Category.append(cardCategory__valueType, cardCategory__trashButton)
+    
     
     // Assigning values to the elements
     valueFormated__moneySimbol.innerHTML = 'R$'
@@ -34,7 +38,7 @@ const createCard = (insertedValue) => {
     cardCategory__valueType.innerHTML = insertedValue.categoryID
     cardCategory__trashButton.innerHTML = 'Excluir'
     
-    // Assigning classes to the elements
+    // Assigning classes and IDs to the elements
     mainItens__card.classList = 'mainItens__card'
     card__valueFormated.classList = 'card__valueFormated'
     valueFormated__moneySimbol.classList = 'valueFormated__moneySimbol'
@@ -42,9 +46,13 @@ const createCard = (insertedValue) => {
     card__Category.classList = 'card__Category'
     cardCategory__valueType.classList = 'cardCategory__valueType'
     cardCategory__trashButton.classList = 'cardCategory__trashButton' 
+    cardCategory__trashButton.dataset.id = insertedValue.id 
+
 
     return mainItens__card
-  }
+
+}
+
 
 // Tranforming '0' into 'Entrada' and '1' into 'Saída' 
 const transformingData = (array) => {
@@ -56,6 +64,7 @@ const transformingData = (array) => {
         }
     })
 }
+
 
 // Function that gives the total amount of individual
 const totalAmount = (array) => {
@@ -74,11 +83,12 @@ const totalAmount = (array) => {
     const totalOutflowValue = totalOutflow.reduce((acc, outflow) => acc + outflow, 0)
     
     const totalAmount = totalDepositsValue-totalOutflowValue
-
+    
     mainValuesSummary__sumValue.innerHTML = `R$${totalAmount}`
 }
 
-// Function that filters the values 'entrada' and the values 'saída'
+
+// Function that filters the values 'entrada' and the values 'saída' - 'TODOS'
 const depositAndOutflow = (array) => {
     // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
     // 2b - We have to use the render function with the new array created in 1 at the button
@@ -87,10 +97,12 @@ const depositAndOutflow = (array) => {
     })
 }
 
+
+// Function that filters the values 'entrada' and the values 'saída' - 'ENTRADA'
 const onlyDeposit = (array) => {
     // 1 - We have to create a new array from 'array' that filters only the deposit's values
     const arrayTotalDeposits = array.filter( element => element.categoryID === 'Entrada')
-
+    
     // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
     // 2b - We have to use the render function with the new array created in 1 at the button
     mainButtons__buttonDeposit.addEventListener('click', () => {
@@ -98,14 +110,37 @@ const onlyDeposit = (array) => {
     })
 }
 
+
+// Function that filters the values 'entrada' and the values 'saída' - 'SAÍDA'
 const onlyOutflow = (array) => {
     // 1 - We have to create a new array from 'array' that filters only the deposit's values
     const arrayTotalDeposits = array.filter( element => element.categoryID === 'Saída')
-
+    
     // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
     // 2b - We have to use the render function with the new array created in 1 at the button
     mainButtons__buttonOutflow.addEventListener('click', () => {
         render(arrayTotalDeposits)
     })
 }
+
+
+// Function that delete the Cardvalue
+const handleDeleteValue = (array) => {
+    const buttons = document.querySelectorAll('.cardCategory__trashButton')
+    // console.log(buttons)
+
+    buttons.forEach( button => {
+        button.addEventListener( 'click', () => {
+            const insertedValueID = Number(event.target.dataset.id)
+            
+            const findInsertedValueIndex = array.findIndex( insertedValue => insertedValue.id === insertedValueID)
+            
+            const removedValue = array.splice(findInsertedValueIndex, 1)
+            console.log(removedValue)
+            render(array)
+        })
+    })
+}
+
+
 render(insertedValues)
