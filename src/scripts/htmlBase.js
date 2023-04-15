@@ -58,8 +58,8 @@ modal__container.append(modalContainer__form)
 modalContainer__form.append(modalForm__TopPart, modalForm__p, modalForm__middlePart, modalForm__bottomPart)
 modalForm__TopPart.append(formTopPart__h2, formTopPart__closeButton)
 modalForm__middlePart.append(formMiddlePart__h3, formMiddlePart__input)
-modalForm__bottomPart.append(form__bottomPart__h4, inputDeposit__label, form__bottomPart__inputDeposit, 
-    inputOutflow__label, form__bottomPart__inputOutflow, modalForm__buttons)
+modalForm__bottomPart.append(form__bottomPart__h4, form__bottomPart__inputDeposit, inputDeposit__label,
+    form__bottomPart__inputOutflow, inputOutflow__label, modalForm__buttons)
 modalForm__buttons.append(formButtons__cancel, formButtons__submit)
 header__title.append(headerTitle__h1_blue, headerTitle__h1)
 main.append(main__h2, main__buttons, main__valuesSummary, main__itens)
@@ -81,24 +81,25 @@ formMiddlePart__h3.innerHTML = 'Valor'
 formMiddlePart__input.type = 'number'
 formMiddlePart__input.innerHTML = `R$${0},00`
 formMiddlePart__input.name = 'value' 
+// formMiddlePart__input.value = 'TESTE' 
 
 
 form__bottomPart__h4.innerHTML = 'Tipo de valor'
 form__bottomPart__inputDeposit.type = 'radio'
 // form__bottomPart__inputDeposit.hidden = true
-form__bottomPart__inputDeposit.id = 0 
-form__bottomPart__inputDeposit.value = 0  
-form__bottomPart__inputDeposit.name = 'categoryID'  
-inputDeposit__label.tabIndex = 0
-inputDeposit__label.for = 0
+// form__bottomPart__inputDeposit.id = 'deposit' 
+form__bottomPart__inputDeposit.value = 0
+form__bottomPart__inputDeposit.name = 'valueType'  
+// inputDeposit__label.tabIndex = 0
+inputDeposit__label.for = 'deposit'
 inputDeposit__label.innerHTML = 'Entrada'
 form__bottomPart__inputOutflow.type = 'radio'
 // form__bottomPart__inputOutflow.hidden = true
-form__bottomPart__inputOutflow.id = 1
+// form__bottomPart__inputOutflow.id = 'outflow'
 form__bottomPart__inputOutflow.value = 1
-form__bottomPart__inputOutflow.name = 'categoryID'  
-inputOutflow__label.tabIndex = 1
-inputOutflow__label.for = 1
+form__bottomPart__inputOutflow.name = 'valueType'  
+// inputOutflow__label.tabIndex = 1
+inputOutflow__label.for = 'outflow'
 inputOutflow__label.innerHTML = 'Saída'
 
 

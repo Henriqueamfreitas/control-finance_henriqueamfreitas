@@ -38,4 +38,9 @@ header{
     background-color: var(--color-brand-1);
     border: none;
     color: var(--fixed-white);
+    transition-duration: 0.4s;
+}
+
+.header__button:hover{
+    background-color: var(--color-brand-2);
 }

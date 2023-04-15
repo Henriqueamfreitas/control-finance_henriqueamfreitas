@@ -27,7 +27,14 @@ main{
     background-color: transparent;
     color: var(--color-grey-2);
     cursor: pointer;
+    transition-duration: 0.4s;
+
 } 
+
+.mainButtons__buttonAll:hover, .mainButtons__buttonDeposit:hover, .mainButtons__buttonOutflow:hover{
+    border: var(--color-brand-1) .0938rem solid;
+    color: var(--color-brand-1)
+}
 
 
 /* main__valuesSummary */
@@ -69,6 +76,11 @@ main{
     height: 2.625rem;
     border: solid .0938rem var(--color-grey-5);
     border-radius: var(--radius-1);
+    transition-duration: 0.4s;
+}
+
+.mainItens__card:hover{
+    border-color: var(--color-brand-1);
 }
 
 .card__valueFormated{

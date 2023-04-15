@@ -8,19 +8,43 @@ const handleRegisterForm = (array) => {
     let newValue = {} // let newClient = {};
     let count = 0
 
+    
     formButtons__submit.addEventListener('click', (event) =>{
         event.preventDefault()
-
+        
         newValue.id = array.length + 1 // TRY TO IMPLEMENT ANOTHER FORM OF CREATING ID
         
+        // const data = new FormData(modalContainer__form);
+        // let output = "";
+        // for (const entry of data) {
+        //   output = `${entry[1]}\r`;
+        // }
+        // // log.innerText = output;
+        // console.log(output)
+        // event.preventDefault();
+        console.log(inputs)
+        console.log(inputs[1])
+        console.log(inputs[2])
+        console.log(inputs[1].name)
+        console.log(inputs[2].name)
+
         inputs.forEach(input => {
             if(input.value === ''){
                 count+=1
             }
             if( input.name === 'categoryID'){
-                newValue[input.name] = 2 
+                // const data = new FormData(modalContainer__form);
+                // let output = "";
+                // for (const entry of data) {
+                //   output = `${entry[1]}\r`;
+                // }
+                // // log.innerText = output;
+                // console.log(output)
+                // event.preventDefault();
+                // newValue[input.valueType] = 23
+                
             } else{
-                newValue[input.name] = Number(input.value) // MEXEMOS AQUI NO VALOR DO INPUT!!!!!!!!!!1
+                newValue[input.name] = Number(input.value) 
             }
         }) 
         
@@ -34,6 +58,7 @@ const handleRegisterForm = (array) => {
         render(array)
         newValue = {}
     })
+
 }  
 
 handleRegisterForm(insertedValues)
