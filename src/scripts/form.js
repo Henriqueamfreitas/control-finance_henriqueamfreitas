@@ -17,7 +17,11 @@ const handleRegisterForm = (array) => {
             if(input.value === ''){
                 count+=1
             }
-            newValue[input.name] = Number(input.value)
+            if( input.name === 'categoryID'){
+                newValue[input.name] = 2 
+            } else{
+                newValue[input.name] = Number(input.value) // MEXEMOS AQUI NO VALOR DO INPUT!!!!!!!!!!1
+            }
         }) 
         
         if(count !== 0){
@@ -25,6 +29,7 @@ const handleRegisterForm = (array) => {
 
             return alert('Por favor, preencha todos os campos do formulário.')
         }
+        console.log(newValue)
         array.push(newValue)
         render(array)
         newValue = {}
