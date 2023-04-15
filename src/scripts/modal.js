@@ -4,6 +4,10 @@ function handleModal() {
         modal.showModal();
     });
 
+    itensEmpty__container.addEventListener("click", () => {
+        modal.showModal();
+    });
+
     closeModal(formTopPart__closeButton)
     closeModal(formButtons__cancel)
 }
