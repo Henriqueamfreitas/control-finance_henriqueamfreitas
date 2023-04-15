@@ -60,3 +60,7 @@ body {
 li{
   list-style: none;
 }
+
+.exclude{
+  display: none;
+}

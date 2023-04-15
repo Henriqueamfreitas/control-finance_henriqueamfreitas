@@ -138,9 +138,30 @@ const handleDeleteValue = (array) => {
             const removedValue = array.splice(findInsertedValueIndex, 1)
             console.log(removedValue)
             render(array)
+            
+            let classStyle = 'exclude'
+            if(main__itens.children.length === 0){
+                // console.log( 'ok')
+                main__itensEmpty.classList.toggle(classStyle)
+            } 
         })
     })
 }
+
+// const test = () => {
+//     // console.log(main__itens)
+//     // console.log(main__itens.children)
+//     // console.log(main__itens.childElementCount)
+//     // console.log(typeof(main__itens.children))
+//     // let object = main__itens.children
+//     // console.log(main__itens.childNodes.length)
+//     // console.log(object)
+    // if(main__itens.children.length === 0){
+    //     // console.log( 'ok')
+    //     main__itensEmpty.classList.remove = 'excludessl'
+    // } 
+// }
+// test()
 
 
 render(insertedValues)

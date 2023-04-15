@@ -48,6 +48,12 @@ const mainValuesSummary__sumValue = document.createElement('p')
 
 const main__itens = document.createElement('div')
 
+const main__itensEmpty = document.createElement('div')
+const itensEmpty__container = document.createElement('div')
+const mainItensEmpty_h2 = document.createElement('h2')
+const mainItensEmpty_p = document.createElement('p')
+
+
 
 //  Establishing the hierarchy between elements
 body.append(header, main)
@@ -62,9 +68,11 @@ modalForm__bottomPart.append(form__bottomPart__h4, form__bottomPart__inputDeposi
     form__bottomPart__inputOutflow, inputOutflow__label, modalForm__buttons)
 modalForm__buttons.append(formButtons__cancel, formButtons__submit)
 header__title.append(headerTitle__h1_blue, headerTitle__h1)
-main.append(main__h2, main__buttons, main__valuesSummary, main__itens)
+main.append(main__h2, main__buttons, main__valuesSummary, main__itens, main__itensEmpty)
 main__buttons.append(mainButtons__buttonAll, mainButtons__buttonDeposit, mainButtons__buttonOutflow)
 main__valuesSummary.append(mainValuesSummary__sum, mainValuesSummary__sumValue)
+main__itensEmpty.append(itensEmpty__container)
+itensEmpty__container.append(mainItensEmpty_h2, mainItensEmpty_p)
 
 
 // Assigning values to the elements
@@ -81,8 +89,6 @@ formMiddlePart__h3.innerHTML = 'Valor'
 formMiddlePart__input.type = 'number'
 formMiddlePart__input.innerHTML = `R$${0},00`
 formMiddlePart__input.name = 'value' 
-// formMiddlePart__input.value = 'TESTE' 
-
 
 form__bottomPart__h4.innerHTML = 'Tipo de valor'
 form__bottomPart__inputDeposit.type = 'radio'
@@ -114,6 +120,10 @@ mainButtons__buttonOutflow.innerHTML = 'Saídas'
 
 mainValuesSummary__sum.innerHTML = 'Soma dos Valores' 
 mainValuesSummary__sumValue.innerHTML = 0 
+
+mainItensEmpty_h2.innerHTML = 'Nenhum valor cadastrado'
+mainItensEmpty_p.innerHTML = 'Registrar novo valor'
+
 
 
 // Assigning classes to the elements
@@ -160,6 +170,12 @@ mainValuesSummary__sum.classList = 'mainValuesSummary__sum text-2-medium'
 mainValuesSummary__sumValue.classList = 'mainValuesSummary__sumValue text-2-medium' 
 
 main__itens.classList = 'main__itens' 
+
+main__itensEmpty.classList = 'exclude'
+itensEmpty__container.classList = 'itensEmpty__container'
+mainItensEmpty_h2.classList = 'mainItensEmpty_h2 title-2-medium '
+mainItensEmpty_p.classList = 'mainItensEmpty_p text-1-bold'
+
 
 
 

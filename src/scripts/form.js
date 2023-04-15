@@ -22,11 +22,11 @@ const handleRegisterForm = (array) => {
         // // log.innerText = output;
         // console.log(output)
         // event.preventDefault();
-        console.log(inputs)
-        console.log(inputs[1])
-        console.log(inputs[2])
-        console.log(inputs[1].name)
-        console.log(inputs[2].name)
+        // console.log(inputs)
+        // console.log(inputs[1])
+        // console.log(inputs[2])
+        // console.log(inputs[1].name)
+        // console.log(inputs[2].name)
 
         inputs.forEach(input => {
             if(input.value === ''){
@@ -56,6 +56,7 @@ const handleRegisterForm = (array) => {
         console.log(newValue)
         array.push(newValue)
         render(array)
+        main__itensEmpty.classList='exclude'
         newValue = {}
     })
 
