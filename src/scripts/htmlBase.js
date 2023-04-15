@@ -127,17 +127,17 @@ modal__container.classList = 'modal__container'
 modalContainer__form.classList = 'modalContainer__form'
 
 modalForm__TopPart.classList = 'modalForm__TopPart'
-formTopPart__h2.classList = 'formTopPart__h2'
+formTopPart__h2.classList = 'formTopPart__h2 title-2-bold'
 formTopPart__closeButton.classList = 'formTopPart__closeButton'
 
-modalForm__p.classList = 'modalForm__p'
+modalForm__p.classList = 'modalForm__p text-1-bold'
 
 modalForm__middlePart.classList = 'modalForm__middlePart' 
-formMiddlePart__h3.classList = 'formMiddlePart__h3'
-formMiddlePart__input.classList = 'formMiddlePart__input'
+formMiddlePart__h3.classList = 'formMiddlePart__h3 text-2-medium'
+formMiddlePart__input.classList = 'formMiddlePart__input text-1-bold'
 
 modalForm__bottomPart.classList = 'modalForm__bottomPart' 
-form__bottomPart__h4.classList = 'form__bottomPart__h4'
+form__bottomPart__h4.classList = 'form__bottomPart__h4 text-2-medium'
 inputDeposit__label.classList = 'inputDeposit__label'
 inputOutflow__label.classList = 'inputOutflow__label'
 form__bottomPart__inputDeposit.classList = 'form__bottomPart__inputDeposit'
@@ -145,8 +145,8 @@ form__bottomPart__inputOutflow.classList = 'form__bottomPart__inputOutflow'
 
 
 modalForm__buttons.classList = 'modalForm__buttons' 
-formButtons__cancel.classList = 'formButtons__cancel'
-formButtons__submit.classList = 'formButtons__submit'
+formButtons__cancel.classList = 'formButtons__cancel text-3-medium'
+formButtons__submit.classList = 'formButtons__submit text-3-medium'
 
 main__h2.classList = 'main__h2 title-2-medium' 
 main__buttons.classList = 'main__buttons' 
