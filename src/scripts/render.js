@@ -33,8 +33,10 @@ const createCard = (insertedValue) => {
     
     
     // Assigning values to the elements
-    valueFormated__moneySimbol.innerHTML = 'R$'
-    valueFormated__value.innerHTML = insertedValue.value
+    // valueFormated__moneySimbol.innerHTML = 'R$'
+    let valueNotFormated = insertedValue.value
+    let valueFormated = valueNotFormated.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    valueFormated__value.innerHTML = valueFormated
     cardCategory__valueType.innerHTML = insertedValue.categoryID
     cardCategory__trashButton.innerHTML = 'Excluir'
     
@@ -83,8 +85,9 @@ const totalAmount = (array) => {
     const totalOutflowValue = totalOutflow.reduce((acc, outflow) => acc + outflow, 0)
     
     const totalAmount = totalDepositsValue-totalOutflowValue
+    let totalAmountFormated = totalAmount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     
-    mainValuesSummary__sumValue.innerHTML = `R$ ${totalAmount}`
+    mainValuesSummary__sumValue.innerHTML = totalAmountFormated
 }
 
 

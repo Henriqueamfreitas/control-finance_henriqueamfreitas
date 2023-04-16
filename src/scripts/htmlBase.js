@@ -94,7 +94,6 @@ modalForm__p.innerHTML = 'Digite o valor e em seguida aperte no botão referente
 
 formMiddlePart__h3.innerHTML = 'Valor'
 formMiddlePart__input.type = 'number'
-formMiddlePart__input.innerHTML = `R$${0},00`
 formMiddlePart__input.name = 'value' 
 
 form__bottomPart__h4.innerHTML = 'Tipo de valor'
