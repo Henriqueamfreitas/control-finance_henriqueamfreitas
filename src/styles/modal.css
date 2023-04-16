@@ -7,7 +7,17 @@
     border: none;
     border-radius: var(--radius-1);
     height: 27rem;
+    animation: mover-esquerda 0.1s linear forwards 1;
 }
+
+  @keyframes mover-esquerda {
+    from {
+      top: -3.5rem;
+    }
+    to {
+      top: 0px;
+    }
+  }
 
 .modal__controller::backdrop{
     background-color: rgba(0, 0, 0, 0.5);
@@ -154,7 +164,7 @@
 /* >700px */
 @media screen and (min-width: 700px){
     .modal__controller{
-        margin-top: 11%;
+        margin-top: 160px;
         margin-bottom: 0rem;
         margin-left: 35%;
         margin-right: 0rem;
@@ -163,7 +173,19 @@
         border: none;
         border-radius: var(--radius-1);
         height: 350px;
+        animation: mover-baixo 0.5s;    
     }
+    
+    @keyframes mover-baixo {
+        0% {
+            transform: translateY(-160px);    
+          }
+      
+        60% {
+            transform: translateY(30px);
+          }
+    }
+
     
     .bottomPart__valueType{
         display: flex;
