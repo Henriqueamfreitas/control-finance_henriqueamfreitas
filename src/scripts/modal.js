@@ -10,6 +10,7 @@ function handleModal() {
 
     closeModal(formTopPart__closeButton)
     closeModal(formButtons__cancel)
+    closeModal(formButtons__submit)
 }
 handleModal();
 

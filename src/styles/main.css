@@ -135,3 +135,34 @@ main{
     text-align: center;
 }
 
+
+
+/* >700px */
+@media screen and (min-width: 700px){
+    main{
+        margin-top: 56px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    
+    .main__middlePart{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main__h2{
+        color: var(--color-grey-1);
+        padding-top: .4688rem;
+    }    
+
+    /* main__buttons  */
+    .main__buttons{
+        display: flex;
+        gap: 14px;
+    } 
+
+    .main__valuesSummary{
+        margin-bottom: 22px;
+    }
+    
+}

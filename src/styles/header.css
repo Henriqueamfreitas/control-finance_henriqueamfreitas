@@ -11,6 +11,7 @@ header{
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
 }
+
 .header__title{
     display: flex;
     gap: .5rem;
@@ -43,4 +44,48 @@ header{
 
 .header__button:hover{
     background-color: var(--color-brand-2);
+}
+
+
+/* >700px */
+@media screen and (min-width: 700px){
+    .header__div{
+        display: flex;
+        justify-content: space-between;
+       padding-top: 2.2813rem;
+       padding-bottom: 2.5313rem;
+        margin-right: 20%;
+        margin-left: 20%;    
+/*         padding-top: 1.75rem; */
+/*         padding-bottom: 1.75rem; */
+    
+    }
+
+    .header__title{
+        margin-bottom: 0;
+        padding-top: .4688rem;    
+        padding-bottom: .4688rem;
+        padding-left: 0rem;    
+        padding-right: .875rem;
+
+    }    
+
+    .header__button{
+        display: flex;
+        width: fit-content;    
+        margin-top: 0;
+        padding-top: .4688rem;    
+        padding-bottom: .4688rem;
+        padding-left: .875rem;    
+        padding-right: .875rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-1);    
+        cursor: pointer;
+        background-color: var(--color-brand-1);
+        border: none;
+        color: var(--fixed-white);
+        transition-duration: 0.4s;    
+    }
+           
 }

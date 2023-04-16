@@ -24,9 +24,12 @@ const formMiddlePart__h3 = document.createElement('h3')
 const formMiddlePart__input = document.createElement('input')
 
 const modalForm__bottomPart = document.createElement('div') 
+const bottomPart__valueType = document.createElement('div') 
 const form__bottomPart__h4 = document.createElement('h4')
+const labelInput__deposit = document.createElement('div')
 const inputDeposit__label = document.createElement('label')
 const form__bottomPart__inputDeposit = document.createElement('input')
+const labelInput__outflow = document.createElement('div')
 const inputOutflow__label = document.createElement('label')
 const form__bottomPart__inputOutflow = document.createElement('input')
 
@@ -36,6 +39,7 @@ const formButtons__submit = document.createElement('button')
 
 
 const main = document.querySelector('main')
+const main__middlePart = document.createElement('div')
 const main__h2 = document.createElement('h2')
 const main__buttons = document.createElement('div')
 const mainButtons__buttonAll = document.createElement('button')
@@ -64,11 +68,14 @@ modal__container.append(modalContainer__form)
 modalContainer__form.append(modalForm__TopPart, modalForm__p, modalForm__middlePart, modalForm__bottomPart)
 modalForm__TopPart.append(formTopPart__h2, formTopPart__closeButton)
 modalForm__middlePart.append(formMiddlePart__h3, formMiddlePart__input)
-modalForm__bottomPart.append(form__bottomPart__h4, form__bottomPart__inputDeposit, inputDeposit__label,
-    form__bottomPart__inputOutflow, inputOutflow__label, modalForm__buttons)
+modalForm__bottomPart.append(bottomPart__valueType, modalForm__buttons)
+bottomPart__valueType.append(form__bottomPart__h4, labelInput__deposit, labelInput__outflow)
+labelInput__deposit.append(form__bottomPart__inputDeposit, inputDeposit__label)
+labelInput__outflow.append(form__bottomPart__inputOutflow, inputOutflow__label)
 modalForm__buttons.append(formButtons__cancel, formButtons__submit)
 header__title.append(headerTitle__h1_blue, headerTitle__h1)
-main.append(main__h2, main__buttons, main__valuesSummary, main__itens, main__itensEmpty)
+main.append(main__middlePart, main__valuesSummary, main__itens, main__itensEmpty)
+main__middlePart.append(main__h2, main__buttons)
 main__buttons.append(mainButtons__buttonAll, mainButtons__buttonDeposit, mainButtons__buttonOutflow)
 main__valuesSummary.append(mainValuesSummary__sum, mainValuesSummary__sumValue)
 main__itensEmpty.append(itensEmpty__container)
@@ -148,7 +155,10 @@ formMiddlePart__h3.classList = 'formMiddlePart__h3 text-2-medium'
 formMiddlePart__input.classList = 'formMiddlePart__input text-1-bold'
 
 modalForm__bottomPart.classList = 'modalForm__bottomPart' 
+bottomPart__valueType.classList = 'bottomPart__valueType'
 form__bottomPart__h4.classList = 'form__bottomPart__h4 text-2-medium'
+labelInput__deposit.classList = 'labelInput__deposit'
+labelInput__outflow.classList = 'labelInput__outflow'
 inputDeposit__label.classList = 'inputDeposit__label'
 inputOutflow__label.classList = 'inputOutflow__label'
 form__bottomPart__inputDeposit.classList = 'form__bottomPart__inputDeposit'
@@ -159,6 +169,8 @@ modalForm__buttons.classList = 'modalForm__buttons'
 formButtons__cancel.classList = 'formButtons__cancel text-3-medium'
 formButtons__submit.classList = 'formButtons__submit text-3-medium'
 
+
+main__middlePart.classList = 'main__middlePart'
 main__h2.classList = 'main__h2 title-2-medium' 
 main__buttons.classList = 'main__buttons' 
 mainButtons__buttonAll.classList = 'mainButtons__buttonAll text-1-bold' 

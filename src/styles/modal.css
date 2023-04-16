@@ -8,11 +8,17 @@
     border-radius: var(--radius-1);
     height: 27rem;
 }
+
+.modal__controller::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .modal__container{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .modalContainer__form{
-    /* height: 100%; */
     margin-right: 1.5rem;
     margin-left: 1.5rem;
 }
@@ -23,8 +29,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
-    /* margin-right: 1.5rem;
-    margin-left: 1.5rem; */
     margin-bottom: 1.5625rem;
 }
 
@@ -42,13 +46,13 @@
     padding-bottom: .25rem;
     color: var(--color-grey-2);
     font-family: var(--font-family-2);
+    border: none;
+    cursor: pointer;
 }
 
 
 /* parapraph */
 .modalForm__p{
-    /* margin-right: 1.5rem;
-    margin-left: 1.5rem; */
     margin-bottom: 1.5625rem;
     color: var(--color-grey-2);
 }
@@ -83,13 +87,30 @@
 
 } 
 
+.bottomPart__valueType{}
+
 .form__bottomPart__h4{
     color: var(--color-grey-1);
+    margin-bottom: 1rem;
 }
 
-.inputDeposit__label{}
+.labelInput__deposit, .labelInput__outflow{
+    border: var(--color-grey-5) solid .0938rem;
+    border-radius: var(--radius-1);
+    padding-top: .4688rem;
+    padding-bottom: .4688rem;
+    margin-bottom: .75rem;
+    text-align: center;    
+}
+
+.labelInput__deposit:hover, .labelInput__outflow:hover{
+    border: var(--color-brand-1) .0938rem solid;
+    color: var(--color-brand-1)
+}
 
 .form__bottomPart__inputDeposit{}
+
+.labelInput__outflow{}
 
 .inputOutflow__label{}
 
@@ -114,6 +135,7 @@
     color: var(--color-grey-2);
     border: none;
     background-color: var(--color-grey-4);
+    cursor: pointer;
 }
 
 .formButtons__submit{
@@ -125,4 +147,47 @@
     color: var(--fixed-white);
     border: none;
     background-color: var(--color-brand-1);
+    cursor: pointer;
+}
+
+
+/* >700px */
+@media screen and (min-width: 700px){
+    .modal__controller{
+        margin-top: 11%;
+        margin-bottom: 0rem;
+        margin-left: 35%;
+        margin-right: 0rem;
+        width: 438px;
+        margin-right: .9375rem;
+        border: none;
+        border-radius: var(--radius-1);
+        height: 350px;
+    }
+    
+    .bottomPart__valueType{
+        display: flex;
+        justify-content: flex-start;
+        gap:1rem;
+    }
+
+    .form__bottomPart__h4{
+        color: var(--color-grey-1);
+        margin-bottom: 0rem;
+        padding-top: 0.54rem;
+    }
+
+    .labelInput__deposit, .labelInput__outflow{
+        padding-left: 14px;
+        padding-right: 14px;
+        margin:0px;
+    }
+
+    .modalForm__buttons{
+        margin-top: 30.5px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }     
+
 }
