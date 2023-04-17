@@ -8,7 +8,12 @@ const handleRegisterForm = (array) => {
     let newValue = {} // let newClient = {};
     let count = 0
 
-    
+    formMiddlePart__input.addEventListener('keydown', (event) => {
+        if((event.key === 'e') || (event.key === 'E')){
+            event.preventDefault()
+        }
+    })
+
     formButtons__submit.addEventListener('click', (event) =>{
         event.preventDefault()
         
@@ -29,6 +34,7 @@ const handleRegisterForm = (array) => {
         // console.log(inputs[2].name)
 
         inputs.forEach(input => {
+            
             if(input.value === ''){
                 count+=1
             }

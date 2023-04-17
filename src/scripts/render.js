@@ -84,7 +84,7 @@ const totalAmount = (array) => {
     })
     const totalOutflowValue = totalOutflow.reduce((acc, outflow) => acc + outflow, 0)
     
-    const totalAmount = totalDepositsValue-totalOutflowValue
+    const totalAmount = totalDepositsValue+totalOutflowValue
     let totalAmountFormated = totalAmount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     
     mainValuesSummary__sumValue.innerHTML = totalAmountFormated
