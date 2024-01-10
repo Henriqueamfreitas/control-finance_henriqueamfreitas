@@ -1,4 +1,4 @@
-const valuesCategory = ["Entrada", "Saída"];
+const valuesCategory = ['Entrada', 'Saída'];
 
 let insertedValues = [
   {

@@ -1,6 +1,5 @@
-// Creating function that render the cards
 const render = (array) => {
-    main__itens.innerHTML = '' // mainList.innerHTML = ''
+    main__itens.innerHTML = '' 
     transformingData(array)
     array.forEach(insertedValue => {
         const card = createCard(insertedValue)
@@ -13,10 +12,7 @@ const render = (array) => {
     handleDeleteValue(insertedValues)
 }
 
-
-// Creating the cards of values
 const createCard = (insertedValue) => {
-    // We are going to create the HTML elements 
     const mainItens__card = document.createElement('li')
     const card__valueFormated = document.createElement('div')
     const valueFormated__moneySimbol = document.createElement('p')
@@ -24,23 +20,21 @@ const createCard = (insertedValue) => {
     const card__Category = document.createElement('div')
     const cardCategory__valueType = document.createElement('p')
     const cardCategory__trashButton = document.createElement('button') 
+    const cardCategory__trashImage = document.createElement('img')
   
+    const trashImage = new Image()
+    trashImage.src = 'data:image/svg+xml,' + encodeURIComponent('<svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.5625 0.875H9.28125L9.00781 0.382812C8.89844 0.164062 8.67969 0 8.43359 0H5.28906C5.04297 0 4.82422 0.164062 4.71484 0.382812L4.46875 0.875H1.1875C0.941406 0.875 0.75 1.09375 0.75 1.3125V2.1875C0.75 2.43359 0.941406 2.625 1.1875 2.625H12.5625C12.7812 2.625 13 2.43359 13 2.1875V1.3125C13 1.09375 12.7812 0.875 12.5625 0.875ZM2.19922 12.7695C2.22656 13.4805 2.80078 14 3.51172 14H10.2109C10.9219 14 11.4961 13.4805 11.5234 12.7695L12.125 3.5H1.625L2.19922 12.7695Z" fill="#ADB5BD"/></svg>')
     
-    //  Establishing the hierarchy between elements
     mainItens__card.append(card__valueFormated, card__Category)
     card__valueFormated.append(valueFormated__moneySimbol, valueFormated__value)
     card__Category.append(cardCategory__valueType, cardCategory__trashButton)
+    cardCategory__trashButton.append(trashImage)
     
-    
-    // Assigning values to the elements
-    // valueFormated__moneySimbol.innerHTML = 'R$'
     let valueNotFormated = insertedValue.value
     let valueFormated = valueNotFormated.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     valueFormated__value.innerHTML = valueFormated
     cardCategory__valueType.innerHTML = insertedValue.categoryID
-    cardCategory__trashButton.innerHTML = 'Excluir'
     
-    // Assigning classes and IDs to the elements
     mainItens__card.classList = 'mainItens__card'
     card__valueFormated.classList = 'card__valueFormated'
     valueFormated__moneySimbol.classList = 'valueFormated__moneySimbol text-2-medium'
@@ -52,11 +46,9 @@ const createCard = (insertedValue) => {
 
 
     return mainItens__card
-
 }
 
 
-// Tranforming '0' into 'Entrada' and '1' into 'Saída' 
 const transformingData = (array) => {
     array.forEach(element => {
         if((element.categoryID === 0) || element.categoryID === 'Entrada'){
@@ -68,7 +60,6 @@ const transformingData = (array) => {
 }
 
 
-// Function that gives the total amount of individual
 const totalAmount = (array) => {
     const arrayTotalDeposits = array.filter( element => element.categoryID === 'Entrada')
     let totalDeposits = []
@@ -91,46 +82,31 @@ const totalAmount = (array) => {
 }
 
 
-// Function that filters the values 'entrada' and the values 'saída' - 'TODOS'
 const depositAndOutflow = (array) => {
-    // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
-    // 2b - We have to use the render function with the new array created in 1 at the button
     mainButtons__buttonAll.addEventListener('click', () => {
         render(array)
     })
 }
 
-
-// Function that filters the values 'entrada' and the values 'saída' - 'ENTRADA'
 const onlyDeposit = (array) => {
-    // 1 - We have to create a new array from 'array' that filters only the deposit's values
     const arrayTotalDeposits = array.filter( element => element.categoryID === 'Entrada')
     
-    // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
-    // 2b - We have to use the render function with the new array created in 1 at the button
     mainButtons__buttonDeposit.addEventListener('click', () => {
         render(arrayTotalDeposits)
     })
 }
 
-
-// Function that filters the values 'entrada' and the values 'saída' - 'SAÍDA'
 const onlyOutflow = (array) => {
-    // 1 - We have to create a new array from 'array' that filters only the deposit's values
     const arrayTotalDeposits = array.filter( element => element.categoryID === 'Saída')
     
-    // 2a - We have to select the button 'mainButtons__buttonDeposit' and see if its really working
-    // 2b - We have to use the render function with the new array created in 1 at the button
     mainButtons__buttonOutflow.addEventListener('click', () => {
         render(arrayTotalDeposits)
     })
 }
 
 
-// Function that delete the Cardvalue
 const handleDeleteValue = (array) => {
     const buttons = document.querySelectorAll('.cardCategory__trashButton')
-    // console.log(buttons)
 
     buttons.forEach( button => {
         button.addEventListener( 'click', () => {
@@ -144,13 +120,10 @@ const handleDeleteValue = (array) => {
             
             let classStyle = 'exclude'
             if(main__itens.children.length === 0){
-                // console.log( 'ok')
                 main__itensEmpty.classList.toggle(classStyle)
             } 
         })
     })
 }
-
-
 
 render(insertedValues)

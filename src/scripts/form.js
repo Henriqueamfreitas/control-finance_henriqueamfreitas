@@ -1,12 +1,15 @@
-const inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll('input');
 
 const handleRegisterForm = (array) => {
-    modal // const modal = document.querySelector(".modal__controller");
+    modal 
     const inputs = document.querySelectorAll('input');
-    formButtons__submit // const button = document.querySelector(".modal__controller > form > button");
+    formButtons__submit 
 
-    let newValue = {} // let newClient = {};
+    let newValue = {} 
     let count = 0
+    let inputValue = document.querySelector('.formMiddlePart__input')
+    let inputDeposit = document.querySelector('.form__bottomPart__inputDeposit')
+    let inputOutflow = document.querySelector('.form__bottomPart__inputOutflow')
 
     formMiddlePart__input.addEventListener('keydown', (event) => {
         if((event.key === 'e') || (event.key === 'E')){
@@ -17,55 +20,33 @@ const handleRegisterForm = (array) => {
     formButtons__submit.addEventListener('click', (event) =>{
         event.preventDefault()
         
-        newValue.id = array.length + 1 // TRY TO IMPLEMENT ANOTHER FORM OF CREATING ID
+        newValue.id = array.length + 1 
         
-        // const data = new FormData(modalContainer__form);
-        // let output = "";
-        // for (const entry of data) {
-        //   output = `${entry[1]}\r`;
-        // }
-        // // log.innerText = output;
-        // console.log(output)
-        // event.preventDefault();
-        // console.log(inputs)
-        // console.log(inputs[1])
-        // console.log(inputs[2])
-        // console.log(inputs[1].name)
-        // console.log(inputs[2].name)
+        if(inputValue.value===''){
+            count+=1
+        }
+        newValue[inputValue.name] = Number(inputValue.value)
 
-        inputs.forEach(input => {
-            
-            if(input.value === ''){
-                count+=1
-            }
-            if( input.name === 'categoryID'){
-                // const data = new FormData(modalContainer__form);
-                // let output = "";
-                // for (const entry of data) {
-                //   output = `${entry[1]}\r`;
-                // }
-                // // log.innerText = output;
-                // console.log(output)
-                // event.preventDefault();
-                // newValue[input.valueType] = 23
-                
-            } else{
-                newValue[input.name] = Number(input.value) 
-            }
-        }) 
-        
+        if(!(inputDeposit.checked) && !(inputOutflow.checked)){
+            count+=1
+        }
+        if(inputDeposit.checked){
+            newValue.categoryID = 0
+        }
+        if(inputOutflow.checked){
+            newValue.categoryID = 1
+        }
+
         if(count !== 0){
             count=0
 
-            return alert('Por favor, preencha todos os campos do formulário.')
+            return toastr.warning('Por favor, preencha todos os campos do formulário.')
         }
-        console.log(newValue)
         array.push(newValue)
         render(array)
         main__itensEmpty.classList='exclude'
         newValue = {}
     })
-
 }  
 
 handleRegisterForm(insertedValues)

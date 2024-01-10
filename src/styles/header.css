@@ -1,21 +1,18 @@
 header{
-    /* margin-right: 1rem;
-    margin-left: 1rem; */
     background-color: var(--color-grey-5);
-    /* display: flex; */
 }
 
 .header__div{
-    margin-right: 1rem;
-    margin-left: 1rem;    
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
+    margin-right: 16px;
+    margin-left: 16px;    
+    padding-top: 28px;
+    padding-bottom: 28px;
 }
 
 .header__title{
     display: flex;
-    gap: .5rem;
-    margin-bottom: 1.25rem;
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
 .headerTitle__h1{
@@ -29,9 +26,9 @@ header{
 .header__button{
     display: flex;
     width: 100%;    
-    margin-top: 0rem;
-    padding-top: .4688rem;    
-    padding-bottom: .4688rem;
+    margin-top: 0px;
+    padding-top: 7.5008px;    
+    padding-bottom: 7.5008px;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-1);    
@@ -46,38 +43,32 @@ header{
     background-color: var(--color-brand-2);
 }
 
-
-/* >700px */
 @media screen and (min-width: 700px){
     .header__div{
         display: flex;
         justify-content: space-between;
-       padding-top: 2.2813rem;
-       padding-bottom: 2.5313rem;
+       padding-top: 36.5008px;
+       padding-bottom: 40.5008px;
         margin-right: 20%;
-        margin-left: 20%;    
-/*         padding-top: 1.75rem; */
-/*         padding-bottom: 1.75rem; */
-    
+        margin-left: 20%;        
     }
 
     .header__title{
         margin-bottom: 0;
-        padding-top: .4688rem;    
-        padding-bottom: .4688rem;
-        padding-left: 0rem;    
-        padding-right: .875rem;
-
+        padding-top: 7.5008px;    
+        padding-bottom: 7.5008px;
+        padding-left: 0px;    
+        padding-right: 14px;
     }    
 
     .header__button{
         display: flex;
         width: fit-content;    
         margin-top: 0;
-        padding-top: .4688rem;    
-        padding-bottom: .4688rem;
-        padding-left: .875rem;    
-        padding-right: .875rem;
+        padding-top: 7.5008px;    
+        padding-bottom: 7.5008px;
+        padding-left: 14px;    
+        padding-right: 14px;
         align-items: center;
         justify-content: center;
         border-radius: var(--radius-1);    
@@ -86,6 +77,5 @@ header{
         border: none;
         color: var(--fixed-white);
         transition-duration: 0.4s;    
-    }
-           
+    }          
 }

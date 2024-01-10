@@ -1,6 +1,4 @@
-// We are going to create the HTML elements 
 const body = document.querySelector('body')
-
 const header = document.createElement('header')
 const header__div = document.createElement('div')
 const header__title = document.createElement('div')
@@ -21,17 +19,17 @@ const modalForm__p = document.createElement('p')
 
 const modalForm__middlePart = document.createElement('div') 
 const formMiddlePart__h3 = document.createElement('h3')
-const formMiddlePart__input = document.createElement('input')
+const formMiddlePart__input = document.createElement('input') /*******/
 
 const modalForm__bottomPart = document.createElement('div') 
 const bottomPart__valueType = document.createElement('div') 
 const form__bottomPart__h4 = document.createElement('h4')
 const labelInput__deposit = document.createElement('div')
 const inputDeposit__label = document.createElement('label')
-const form__bottomPart__inputDeposit = document.createElement('input')
+const form__bottomPart__inputDeposit = document.createElement('input') /*******/ 
 const labelInput__outflow = document.createElement('div')
 const inputOutflow__label = document.createElement('label')
-const form__bottomPart__inputOutflow = document.createElement('input')
+const form__bottomPart__inputOutflow = document.createElement('input') /*******/
 
 const modalForm__buttons = document.createElement('div') 
 const formButtons__cancel = document.createElement('button')
@@ -57,9 +55,6 @@ const itensEmpty__container = document.createElement('div')
 const mainItensEmpty_h2 = document.createElement('h2')
 const mainItensEmpty_p = document.createElement('p')
 
-
-
-//  Establishing the hierarchy between elements
 body.append(header, main)
 header.append(header__div, modal)
 header__div.append(header__title, header__button)
@@ -81,11 +76,9 @@ main__valuesSummary.append(mainValuesSummary__sum, mainValuesSummary__sumValue)
 main__itensEmpty.append(itensEmpty__container)
 itensEmpty__container.append(mainItensEmpty_h2, mainItensEmpty_p)
 
-
-// Assigning values to the elements
 headerTitle__h1_blue.innerHTML = 'Control'
 headerTitle__h1.innerHTML = 'Finance' 
-header__button.innerHTML = 'Regitrar novo valor'
+header__button.innerHTML = 'Registrar novo valor'
 
 formTopPart__h2.innerHTML = 'Registro de valor'
 formTopPart__closeButton.innerHTML = 'X'
@@ -98,19 +91,13 @@ formMiddlePart__input.name = 'value'
 
 form__bottomPart__h4.innerHTML = 'Tipo de valor'
 form__bottomPart__inputDeposit.type = 'radio'
-// form__bottomPart__inputDeposit.hidden = true
-// form__bottomPart__inputDeposit.id = 'deposit' 
 form__bottomPart__inputDeposit.value = 0
 form__bottomPart__inputDeposit.name = 'valueType'  
-// inputDeposit__label.tabIndex = 0
 inputDeposit__label.for = 'deposit'
 inputDeposit__label.innerHTML = 'Entrada'
 form__bottomPart__inputOutflow.type = 'radio'
-// form__bottomPart__inputOutflow.hidden = true
-// form__bottomPart__inputOutflow.id = 'outflow'
 form__bottomPart__inputOutflow.value = 1
 form__bottomPart__inputOutflow.name = 'valueType'  
-// inputOutflow__label.tabIndex = 1
 inputOutflow__label.for = 'outflow'
 inputOutflow__label.innerHTML = 'Saída'
 
@@ -130,9 +117,6 @@ mainValuesSummary__sumValue.innerHTML = 0
 mainItensEmpty_h2.innerHTML = 'Nenhum valor cadastrado'
 mainItensEmpty_p.innerHTML = 'Registrar novo valor'
 
-
-
-// Assigning classes to the elements
 header__div.classList = 'header__div' 
 header__title.classList = 'header__title'
 headerTitle__h1.classList = 'headerTitle__h1 title-1-bold' 
@@ -160,8 +144,8 @@ labelInput__deposit.classList = 'labelInput__deposit'
 labelInput__outflow.classList = 'labelInput__outflow'
 inputDeposit__label.classList = 'inputDeposit__label'
 inputOutflow__label.classList = 'inputOutflow__label'
-form__bottomPart__inputDeposit.classList = 'form__bottomPart__inputDeposit'
-form__bottomPart__inputOutflow.classList = 'form__bottomPart__inputOutflow'
+form__bottomPart__inputDeposit.classList = 'form__bottomPart__inputDeposit' /*******/
+form__bottomPart__inputOutflow.classList = 'form__bottomPart__inputOutflow' /*******/
 
 
 modalForm__buttons.classList = 'modalForm__buttons' 
