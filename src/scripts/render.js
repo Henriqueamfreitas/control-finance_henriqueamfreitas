@@ -43,7 +43,7 @@ const createCard = (insertedValue) => {
     cardCategory__valueType.classList = 'cardCategory__valueType text-2-regular'
     cardCategory__trashButton.classList = 'cardCategory__trashButton' 
     cardCategory__trashButton.dataset.id = insertedValue.id 
-
+    cardCategory__trashImage.dataset.id = insertedValue.id 
 
     return mainItens__card
 }
@@ -67,7 +67,7 @@ const totalAmount = (array) => {
         totalDeposits.push(deposit.value)
     })
     const totalDepositsValue = totalDeposits.reduce((acc, deposit) => acc + deposit, 0)
-    
+
     const arrayTotalOutflow = array.filter( element => element.categoryID === 'Saída')
     let totalOutflow = []
     arrayTotalOutflow.forEach(outflow => {
@@ -75,7 +75,7 @@ const totalAmount = (array) => {
     })
     const totalOutflowValue = totalOutflow.reduce((acc, outflow) => acc + outflow, 0)
     
-    const totalAmount = totalDepositsValue+totalOutflowValue
+    const totalAmount = totalDepositsValue-totalOutflowValue
     let totalAmountFormated = totalAmount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     
     mainValuesSummary__sumValue.innerHTML = totalAmountFormated
@@ -109,13 +109,11 @@ const handleDeleteValue = (array) => {
     const buttons = document.querySelectorAll('.cardCategory__trashButton')
 
     buttons.forEach( button => {
-        button.addEventListener( 'click', () => {
-            const insertedValueID = Number(event.target.dataset.id)
-            
+        button.addEventListener( 'click', (event) => {
+            const insertedValueID = (event.target.dataset.id)
+
             const findInsertedValueIndex = array.findIndex( insertedValue => insertedValue.id === insertedValueID)
-            
             const removedValue = array.splice(findInsertedValueIndex, 1)
-            console.log(removedValue)
             render(array)
             
             let classStyle = 'exclude'
